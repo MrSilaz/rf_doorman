@@ -15,7 +15,7 @@
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'Doorman / Bouncer',
 	'description' => 'With this extension you have a bouncer function to disable active users or to force new logins.',
-	'category' => 'backend',
+	'category' => 'module',
 	'author' => 'Ralf Freit / www.freit.de',
 	'author_email' => 'ralf@freit.de',
 	'state' => 'stable',
