@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2018-10-01T22:11:39Z" product-name="rf_doorman">
+        <header/>
+        <body>
+            <trans-unit id="thats_you">
+                <source>(You)</source>
+                <target>(Sie)</target>
+            </trans-unit>
+            <trans-unit id="label.backend">
+                <source>Backend user</source>
+                <target>Backend Benutzer</target>
+            </trans-unit>
+            <trans-unit id="label.frontend">
+                <source>Frontend user</source>
+                <target>Frontend Benutzer</target>
+            </trans-unit>
+            <trans-unit id="title.hide">
+                <source>Permanently disable users</source>
+                <target>Benutzer dauerhaft deaktivieren</target>
+            </trans-unit>
+            <trans-unit id="title.forcedrelog">
+                <source>Kick out user (force relog)</source>
+                <target>Benutzer rausschmeißen (Relog erzwingen)</target>
+            </trans-unit>
+            <trans-unit id="error.nodata">
+                <source>No data found.</source>
+                <target>Keine Daten gefunden.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

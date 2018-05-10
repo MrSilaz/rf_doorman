@@ -1,0 +1,90 @@
+<ul class="dropdown-list doorman" data-fecount="{feusers -> f:count()}" data-becount="{beusers -> f:count()}">
+    <f:if condition="{beusers}">
+        <f:then>
+            <li class="dropdown-header">
+                <f:translate key="label.backend" extensionName="rf_doorman" />
+            </li>
+            <f:for each='{beusers}' as='beuser' iteration='inter'>
+                <f:render section="userrows" arguments="{user: beuser, usertyp : 'beuser', currentUser : currentUser}" />
+            </f:for>
+        </f:then>
+    </f:if>
+    <f:if condition="{feusers}">
+        <f:then>
+            <li class="dropdown-header">
+                <f:translate key="label.frontend" extensionName="rf_doorman" />
+            </li>
+            <f:for each='{feusers}' as='feuser' iteration='inter'>
+                <f:render section="userrows" arguments="{user: feuser, usertyp : 'feuser'}" />
+            </f:for>
+        </f:then>
+    </f:if>
+
+</ul>
+
+
+<f:section name="userrows">
+
+    <li class="userrow" data-user="{user.ses_userid}" data-type="{usertyp}">
+
+        <div class="betbl">
+            <div class="betcell label">
+
+                <f:if condition="{user.admin}">
+                    <f:then>
+                        <span class="t3js-icon icon icon-size-small icon-state-default icon-status-user-admin" data-identifier="status-user-admin">
+                            <span class="icon-markup">
+                                <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/status/status-user-admin.svg" width="16" height="16">
+                            </span>
+                        </span>
+                    </f:then>
+                    <f:else>
+                        <span class="t3js-icon icon icon-size-small icon-state-default icon-status-user-admin" data-identifier="status-user-admin">
+                            <span class="icon-markup">
+                                <img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/status/status-user-backend.svg" width="16" height="16">
+                            </span>
+                        </span>
+                    </f:else>
+                </f:if>
+
+                {f:if(condition: '{user.realName} == ""', then: '{user.username}', else: '{user.realName}')} {f:if(condition: '{user.ses_userid} == {currentUser.uid}', then: '{f:translate(key: \'thats_you\', extensionName: \'rf_doorman\')}')}
+
+            </div>
+            <div class="betcell buttons">
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <span class="btn btn-icon btn-default" data-type="hide">
+                        <span class="icon icon-size-small icon-state-default">
+                            <span class="icon-markup">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <title>
+                                        <f:translate key="title.hide" extensionName="rf_doorman" />
+                                    </title>
+                                    <path d="M0 8c0-2.761 2.242-5 4.997-5h6.006a5.001 5.001 0 0 1 0 10H4.997A5.002 5.002 0 0 1 0 8zm11 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                                        class="icon-color"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+
+                    <span class="btn btn-icon btn-default" data-type="kick">
+                        <span class="icon icon-size-small icon-state-default">
+                            <span class="icon-markup">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                                    <title>
+                                        <f:translate key="title.forcedrelog" extensionName="rf_doorman" />
+                                    </title>
+                                    <g class="icon-color">
+                                        <path d="M9 10v4H2V2h7v4h1V1.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V10H9z"></path>
+                                        <path d="M10.983 5.041a.5.5 0 0 1 .812-.39l3.7 2.96a.5.5 0 0 1 0 .78l-3.7 2.96a.5.5 0 0 1-.812-.39V9H6V7h4.983V5.041z"></path>
+                                    </g>
+                                </svg>
+                            </span>
+                        </span>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </li>
+</f:section>

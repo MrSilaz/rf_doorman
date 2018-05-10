@@ -1,0 +1,75 @@
+.userrow .betbl {
+    display: table
+}
+
+.userrow .betbl .betcell {
+    display: table-cell
+}
+
+.userrow .betbl .betcell.label {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-decoration: none;
+    cursor: auto;
+    white-space: nowrap;
+    color: #ddd;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 4px 16px;
+    font-size: 100%;
+    font-weight: 400;
+    min-width: 140px;
+    text-align: left
+}
+
+.userrow .betbl .betcell.buttons {
+    width: 50px;
+    padding-left: 15px
+}
+
+.userrow .betbl .betcell.buttons .icon-color {
+    fill: #000
+}
+
+.userrow:hover {
+    background: #eee;
+    margin-left: -5px;
+    padding-left: 5px
+}
+
+.userrow:hover .betbl .betcell.label {
+    color: #000
+}
+
+.userrow.removed {
+    position: relative
+}
+
+.userrow.removed:after {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 90%;
+    height: 5px;
+    background: red;
+    animation-name: strike;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin: 0 auto
+}
+
+@keyframes strike {
+    0% {
+        width: 0
+    }
+    100% {
+        width: 100%
+    }
+}
+#ralffreit-rfdoorman-backend-doormanitem a.dropdown-toggle {
+    padding: 6px 10px 7px;
+}
